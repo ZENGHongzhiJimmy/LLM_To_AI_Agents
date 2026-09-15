@@ -1,4 +1,4 @@
-# How to Build an AI Agent in Python
+# From LLM API to Coding Agents
 
 This repository has two parts.
 
@@ -11,7 +11,7 @@ The story is the same in both parts. You start with the LLM API: send a question
 
 ## Part 1: Next.js tutorial
 
-The visual walkthrough lives in `web/`. You do not need Python or an API key to read the explanations.
+The visual walkthrough lives in `web/`.
 
 ```bash
 cd web
@@ -29,7 +29,10 @@ Open [http://localhost:3005](http://localhost:3005). Each section has its own pa
 | `/tool-use` | Let the model ask your program to read a file, then call again |
 | `/coding-agent` | More functions, plus a check before a shell command |
 
-If you try the in-browser demos that call a model, put an OpenRouter key in a `.env` file in the **repository root** (one folder above `web/`). The app reads that file. See Part 2 for how to create the key.
+If you try the in-browser demos that call a model, you need an OpenRouter API key (see Part 2 for how to create one). Use either method:
+
+- Put `OPENROUTER_API_KEY=your_key_here` in a `.env` file in the **repository root** (one folder above `web/`). The app reads that file.
+- Or paste the key in the sidebar **Settings** (API key field). Leave the field blank to keep using `.env`. A value you type there overrides `.env`.
 
 ---
 
@@ -54,7 +57,7 @@ The default model is `deepseek/deepseek-v4-flash-0731`:
 
 `POST https://openrouter.ai/api/v1/chat/completions`
 
-OpenRouter needs an **API key** so it can identify and bill your account. Put the key in a `.env` file, not in source. The scripts load it with `python-dotenv`. The Next.js app reads the same file from the repository root.
+OpenRouter needs an **API key** so it can identify and bill your account. Put the key in a `.env` file, not in source. The scripts load it with `python-dotenv`. The Next.js app can use that same file, or you can paste the key in the sidebar Settings.
 
 1. Create a key at [OpenRouter](https://openrouter.ai/settings/keys).
 
@@ -175,8 +178,8 @@ The hosted model cannot open your folder. Your program can. Before it sends the 
 
 1. Change the system prompt to this:
 
-```
-You are Alice, a helpful assistant.
+```markdown
+You are Alice, a helpful assistant. Answer only based on the document.
 
 # Document
 {document_context}
@@ -371,7 +374,7 @@ In this section we told the model about `read_file` with a `TOOL_SCHEMAS` list. 
 
 ## Optional: coding agent (`agent.py`)
 
-A coding agent is an AI system that can read, write, and change code on its own. It does not stop after one snippet. It reasons, chooses a tool, runs it, looks at the result, and repeats until the task is done or a person has to step in.
+A coding agent is an AI system that can read, write, and change code on its own. It reasons, chooses a tool, runs it, looks at the result, and repeats until the task is done or a person has to step in.
 
 ### How a coding agent works
 

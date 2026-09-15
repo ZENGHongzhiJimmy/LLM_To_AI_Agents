@@ -231,8 +231,8 @@ print(completion.choices[0].message.content)`}
           <ol>
             <li>Change the system prompt to this:</li>
           </ol>
-          <SampleBlock>
-{`You are Alice, a helpful assistant.
+          <SampleBlock caption="prompt template" language="markdown">
+{`You are Alice, a helpful assistant. Answer only based on the document.
 
 # Document
 {document_context}`}

@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { highlightJson, looksLikeJson } from "@/lib/highlight-json";
+import { highlightMarkdown } from "@/lib/highlight-markdown";
 import { highlightPython, looksLikePython } from "@/lib/highlight-python";
 import { OUTPUT_TEXT } from "@/lib/output-text";
 
@@ -139,16 +140,21 @@ export function Explorable({
 
 export function SampleBlock({
   caption,
+  language,
   children,
 }: {
   caption?: string;
+  language?: "json" | "python" | "markdown";
   children: string;
 }) {
-  const highlighted = looksLikeJson(children)
-    ? highlightJson(children)
-    : looksLikePython(children)
-      ? highlightPython(children)
-      : null;
+  const highlighted =
+    language === "markdown"
+      ? highlightMarkdown(children)
+      : language === "json" || (!language && looksLikeJson(children))
+        ? highlightJson(children)
+        : language === "python" || (!language && looksLikePython(children))
+          ? highlightPython(children)
+          : null;
 
   return (
     <figure className="max-w-3xl">

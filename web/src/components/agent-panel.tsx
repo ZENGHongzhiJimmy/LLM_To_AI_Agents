@@ -209,7 +209,7 @@ export function AgentPanel({ connection }: { connection: LlmConnection }) {
   return (
     <TutorialSection
       title="Coding agent"
-      lead="A coding agent is an AI system that can read, write, and change code on its own. It does not stop after one snippet. It reasons, chooses a tool, runs it, looks at the result, and repeats until the task is done or a person has to step in."
+      lead="A coding agent is an AI system that can read, write, and change code on its own. It reasons, chooses a tool, runs it, looks at the result, and repeats until the task is done or a person has to step in."
     >
       <Subsection number="4.1" title="How a coding agent works">
         <LessonProse>
