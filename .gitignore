@@ -1,0 +1,14 @@
+.env
+web/.env.local
+web/node_modules/
+web/.next/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.DS_Store

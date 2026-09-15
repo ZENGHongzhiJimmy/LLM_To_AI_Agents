@@ -1,0 +1,20 @@
+What is a Coding Agent?
+
+A coding agent is an artificial intelligence system -- often powered by large
+language models (LLMs) -- that assists with software development tasks. Unlike a
+simple autocomplete tool, a coding agent can understand project context, plan
+and execute multi-step tasks, and interact with the environment (such as reading
+and writing files, running commands, and testing code).
+
+Key capabilities of a coding agent include:
+- Understanding codebases by reading files and exploring directory structures.
+- Writing, editing, and generating code in various programming languages.
+- Running shell commands, tests, and build tools to verify work.
+- Debugging issues by analyzing errors and iterating on fixes.
+- Refactoring, documenting, and summarizing existing code.
+- Automating repetitive developer workflows.
+
+Coding agents act as collaborative teammates: developers give them high-level
+goals and constraints, and the agent turns those goals into concrete actions,
+reporting back the results. They help speed up development, reduce boilerplate
+work, and allow humans to focus on higher-level design and decision-making.
