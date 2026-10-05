@@ -55,7 +55,7 @@ while True:
             "Content-Type": "application/json",
         },
         json={
-            "model": "deepseek/deepseek-v4-flash-0731",
+            "model": "qwen/qwen3.8-27b:free",
             "messages": messages,
             "tools": TOOL_SCHEMAS,
             "reasoning": {"enabled": False},
